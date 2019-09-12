@@ -2,8 +2,7 @@ import {
   FETCH_MOVIES_REQUEST
 } from "../actionTypes";
 
-export function fetchMoviesList =()=>{
-   return {
-     FETCH_MOVIES_REQUEST
-   };
-}
+
+export const fetchMoviesList =()=>({
+    type:FETCH_MOVIES_REQUEST
+});

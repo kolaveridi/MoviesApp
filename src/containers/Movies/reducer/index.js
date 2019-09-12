@@ -10,26 +10,26 @@ const INITIAL_STATE={
     isFetchingMovies:false
 };
 
-export const function MoviesReducer(state=INITIAL_STATE,action={}){
+export default function MoviesReducer(state=INITIAL_STATE,action={}){
   switch (action.type) {
-     case :FETCH_MOVIES_REQUEST:{
+     case FETCH_MOVIES_REQUEST:{
        return{
          ...state,
          isFetchingMovies:true
        }
      }
-     case :FETCH_MOVIES_REQUEST_ERROR:{
+     case FETCH_MOVIES_REQUEST_ERROR:{
        return{
          ...state,
          isFetchingMovies:false
        };
      }
-     case :FETCH_MOVIES_REQUEST_SUCCESS:{
+     case FETCH_MOVIES_REQUEST_SUCCESS:{
        return{
          ...state,
          isFetchingMovies:false,
          movies:[action.response,...state.movies]
-       }
+       };
      }
       default:
       return state;
