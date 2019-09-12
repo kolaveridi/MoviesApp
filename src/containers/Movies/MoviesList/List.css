@@ -1,0 +1,8 @@
+.moviesRoot{
+  display: grid;
+   grid-template-columns: auto auto auto;
+   padding: 10px;
+}
+.header:{
+  color: red;
+}

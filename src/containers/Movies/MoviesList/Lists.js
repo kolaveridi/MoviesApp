@@ -1,4 +1,5 @@
  import React from 'react';
+ import './List.css';
  class MovieList extends React.Component{
   render(){
     let data=[];
@@ -6,7 +7,7 @@
 
 
     return(
-      <div>
+      <div className="moviesRoot">
         {
           movies && movies.map((movie,index)=>{
             let youTubeUrl = movie.TrailerURL;
@@ -15,18 +16,13 @@
              r = youTubeUrl.match(rx);
              let youTubeTrailerId=r[1];
              let youtubeVideoUrl=`https://www.youtube.com/embed/${youTubeTrailerId}`;
-
-
-
-
-
-
-
             return (
-              <div key={movie.EventCode}>
-              <h1> {movie.EventTitle}</h1>
+              <div  key={movie.EventCode}>
+              <h1 className="header"> {movie.EventTitle}</h1>
+              <div>
                <iframe width="420" height="345" src={youtubeVideoUrl}>
               </iframe>
+              </div>
 
               </div>
             )
