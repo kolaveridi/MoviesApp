@@ -1,6 +1,6 @@
 import React from 'react';
 import './List.css';
-import YouTube from "react-youtube";
+
 
 class MovieList extends React.Component {
 
@@ -13,8 +13,7 @@ class MovieList extends React.Component {
     console.log("working");
   }
   hiddenClick = (youtubeVideoUrl) => {
-    alert(youtubeVideoUrl,'clicked');
-    console.log("LOG",youtubeVideoUrl);
+    
     this.setState({
       videoClicked: true,
       videoUrl: youtubeVideoUrl
@@ -36,9 +35,9 @@ class MovieList extends React.Component {
 
   render() {
     const { videoClicked, videoUrl } = this.state;
-    console.log("videoUrl",videoUrl);
+
     let autoPlayVideoUrl= videoUrl+"?autoplay=1";
-    console.log("autoPlayVideoUrl",autoPlayVideoUrl);
+    
     let data = [];
     const { movies } = this.props;
 

@@ -10,8 +10,7 @@ class Movies extends React.Component{
   render(){
 
     const{movies,languages}= this.props;
-    console.log("moviesrender",movies);
-    console.log("languages",languages);
+    
 
     return(
       <div className="root">
@@ -30,7 +29,7 @@ function mapStateToProps(state) {
     let movieData=data.length> 1? data[1]:[];
     let objectToArray=[];
     Object.keys(movieData).forEach(function(key,index) {
-      console.log("index",index);
+
       if(index<50)
       objectToArray=[...objectToArray,movieData[key]];
     });

@@ -8,7 +8,8 @@ import {
 import { all, call, delay, put, take, takeLatest } from "redux-saga/effects";
 import axios from "axios";
 import data from '../../../global/data.js';
-const url ="https://in.bookmyshow.com/serv/getData";
+// this is the given url to take data from 
+const url =" "; 
 
 // const getMoviesList = () =>
 //   axios
