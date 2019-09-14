@@ -8,6 +8,10 @@
      alert('hello');
      console.log("working");
    }
+   hiddenClick=(youtubeVideoUrl)=>{
+    
+     console.log('clicked',youtubeVideoUrl )
+   }
 
    _onReady(event) {
     // access to player in all event handlers via event.target
@@ -40,11 +44,13 @@
              let youtubeVideoUrl=`https://www.youtube.com/embed/${youTubeTrailerId}`;
 
             return (
-              <div onClick={this.onClick}  key={movie.EventCode}>
+              <div   key={movie.EventCode}>
 
               <div  className="movieItem">
-                <iframe width="150" height="220" src={youtubeVideoUrl} ref={(f) => {this.ifr = f}}>
+                <iframe width="150" height="220" src={youtubeVideoUrl} >
                </iframe> 
+                <div onClick={()=>this.hiddenClick(youtubeVideoUrl)} className="overlay">
+                  </div>
               </div>
               </div>
             )
