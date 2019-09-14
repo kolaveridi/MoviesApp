@@ -13,6 +13,8 @@ class MovieList extends React.Component {
     console.log("working");
   }
   hiddenClick = (youtubeVideoUrl) => {
+    alert(youtubeVideoUrl,'clicked');
+    console.log("LOG",youtubeVideoUrl);
     this.setState({
       videoClicked: true,
       videoUrl: youtubeVideoUrl
@@ -34,6 +36,7 @@ class MovieList extends React.Component {
 
   render() {
     const { videoClicked, videoUrl } = this.state;
+    console.log("videoUrl",videoUrl);
     let autoPlayVideoUrl= videoUrl+"?autoplay=1";
     console.log("autoPlayVideoUrl",autoPlayVideoUrl);
     let data = [];
@@ -41,18 +44,17 @@ class MovieList extends React.Component {
 
 
     return (
-      <div className="moviesRoot">
-
+      <div >
          {
                    videoClicked ?
                     <div className="play">
-                       <iframe play width="200px" height="200px" src={autoPlayVideoUrl} >
-                   </iframe>
+                       <iframe play width="500" height="300" src={autoPlayVideoUrl} >
+                   </iframe>  
                    </div>
                    :null
 
             } 
-         
+         <div className="moviesRoot">
         {
           movies && movies.map((movie, index) => {
             let youTubeUrl = movie.TrailerURL;
@@ -65,9 +67,8 @@ class MovieList extends React.Component {
             return (
               <div key={movie.EventCode}>
 
-                <div className="movieItem">
-                  {
-                    
+                <div  className={videoClicked ? "movieState":"movieItem"} >
+                  { 
                       <div>
                         <iframe width="150" height="220" src={youtubeVideoUrl}>
                         </iframe>
@@ -81,6 +82,7 @@ class MovieList extends React.Component {
           })
 
         }
+        </div>
       </div>
     )
   }
